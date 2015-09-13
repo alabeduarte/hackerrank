@@ -1,8 +1,8 @@
 describe Hackerhank::Algorithms::Implementation::Sherlock do
-  let(:sherlock) { described_class.new(number_of_digits) }
+  subject(:sherlock) { described_class.new }
 
   describe '#decent_number' do
-    subject(:decent_number) { sherlock.decent_number }
+    subject(:decent_number) { sherlock.decent_number(number_of_digits) }
 
     context 'when number of digits is 3 digits' do
       let(:number_of_digits) { 3 }
@@ -30,7 +30,7 @@ describe Hackerhank::Algorithms::Implementation::Sherlock do
       context 'when number of digits are 13' do
         let(:number_of_digits) { 13 }
 
-        xit { expect(decent_number).to eq '55555533333' }
+        it { expect(decent_number).to eq '5553333333333' }
       end
     end
   end
