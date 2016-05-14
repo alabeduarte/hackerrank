@@ -1,7 +1,5 @@
 package algorithms.warmup
 
-import scala.collection.immutable.IndexedSeq
-
 // In order to submit to hackerrank, rename it to "Solution"
 object DiagonalDifference {
   def main(args: Array[String]) = {
