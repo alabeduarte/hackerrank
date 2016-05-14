@@ -1,7 +1,8 @@
 package algorithms.warmup
 
+// In order to submit to hackerrank, rename it to "Solution"
 object SimpleArraySum {
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) = {
     println(arrayOfNumbers.sum)
   }
 
