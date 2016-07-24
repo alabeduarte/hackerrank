@@ -4,6 +4,8 @@ package algorithms.strings
 
 // In order to submit to hackerrank, rename it to "Solution"
 object SuperReducedString {
+  val Regex = """(.)\1"""
+
   def main(args: Array[String]) = {
     val scanner = new java.util.Scanner(System.in)
 
@@ -14,8 +16,6 @@ object SuperReducedString {
   }
 
   def deletePairOfAdjacentLetters(letters: String): String = {
-    val Regex = """(.)\1"""
-
     @scala.annotation.tailrec
     def evaluate(letters: Seq[Char], reducedLetters: String): String = letters match {
       case Seq() =>
@@ -23,13 +23,13 @@ object SuperReducedString {
 
       case Seq(prev, curr, tail @ _ *) =>
         if (prev == curr) {
-          evaluate(tail, replaceAll(Regex, reducedLetters))
+          evaluate(tail, replaceAll(reducedLetters))
         } else {
-          evaluate(curr +: tail, replaceAll(Regex, reducedLetters :+ prev))
+          evaluate(curr +: tail, replaceAll(reducedLetters :+ prev))
         }
 
       case curr +: Seq() =>
-        evaluate(Seq.empty, replaceAll(Regex, reducedLetters :+ curr))
+        evaluate(Seq.empty, replaceAll(reducedLetters :+ curr))
     }
 
     val reducedLetters = evaluate(letters.toCharArray, "")
@@ -37,7 +37,7 @@ object SuperReducedString {
     if (reducedLetters.isEmpty) "Empty String" else reducedLetters
   }
 
-  def replaceAll(Regex: String, reducedLetters: String): String = {
+  def replaceAll(reducedLetters: String): String = {
     reducedLetters.replaceAll(Regex, "")
   }
 }
