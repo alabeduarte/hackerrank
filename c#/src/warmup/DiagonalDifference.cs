@@ -23,7 +23,8 @@ class Solution {
       .Aggregate((curr, next) => curr + next);
   }
 
-  static void Main(String[] args) {
+  static void Main(String[] args)
+  {
     int matrixDimension = Convert.ToInt32(Console.ReadLine());
     int[][] matrix = BuildMatrix(matrixDimension);
 

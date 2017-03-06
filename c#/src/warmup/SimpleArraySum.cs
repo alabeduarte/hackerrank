@@ -3,7 +3,8 @@ using System.Linq;
 
 class Solution {
 
-  static void Main(String[] args) {
+  static void Main(String[] args)
+  {
     // skip the first line
     Console.ReadLine();
 
