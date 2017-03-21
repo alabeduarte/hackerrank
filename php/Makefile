@@ -1,8 +1,8 @@
 install:
-	docker build -t helloworld-php .
+	docker build -t hackerrank-php .
 
 run:
-	./docker/restart-docker-image.sh helloworld-php
+	./docker/restart-docker-image.sh hackerrank-php
 
 clean:
 	./docker/clean-docker-images.sh
