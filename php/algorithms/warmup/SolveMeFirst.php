@@ -1,14 +1,14 @@
 <?php
-function solveMeFirst($a,$b){
+function solve_me_first($a, $b) {
   return $a + $b;
 }
 
 $handle = fopen ("php://stdin","r");
 
-$_a = fgets($handle);
-$_b = fgets($handle);
+$a = fgets($handle);
+$b = fgets($handle);
 
-$sum = solveMeFirst((int)$_a, (int)$_b);
+$sum = solve_me_first((int) $_a, (int) $_b);
 
 print($sum);
 
